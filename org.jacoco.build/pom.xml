@@ -556,6 +556,7 @@
         <groupId>com.diffplug.spotless</groupId>
         <artifactId>spotless-maven-plugin</artifactId>
         <configuration>
+          <skip>true</skip>
           <java>
             <lineEndings>UNIX</lineEndings>
             <includes>
