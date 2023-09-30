@@ -10,25 +10,18 @@
  *    Evgeny Mandrikov - initial API and implementation
  *
  *******************************************************************************/
-package org.jacoco.core.test.validation.java16.targets;
+package org.jacoco.core.test.validation.java21;
 
-import static org.jacoco.core.test.validation.targets.Stubs.nop;
+import org.jacoco.core.test.validation.ValidationTestBase;
+import org.jacoco.core.test.validation.java21.targets.SwitchPatternMatchingTarget;
 
 /**
- * This target exercises pattern matching for instanceof
- * (<a href="https://openjdk.java.net/jeps/394">JEP 394</a>).
+ * Test of code coverage in {@link SwitchPatternMatchingTarget}.
  */
-public class InstanceofTarget {
+public class SwitchPatternMatchingTest extends ValidationTestBase {
 
-	private static void ifInstanceof(Object e) {
-		if (e instanceof String s) { // assertFullyCovered(0, 2)
-			nop(s);
-		}
-	}
-
-	public static void main(String[] args) {
-		ifInstanceof(new Object());
-		ifInstanceof("string");
+	public SwitchPatternMatchingTest() {
+		super(SwitchPatternMatchingTarget.class);
 	}
 
 }
